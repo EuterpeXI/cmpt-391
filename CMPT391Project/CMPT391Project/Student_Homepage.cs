@@ -16,7 +16,7 @@ namespace CMPT391Project
         public Student_Homepage(int student_id)
         {
             InitializeComponent();
-            StudentLabel.Text = student_id.ToString();
+            StudentIDLabel.Text = student_id.ToString();
             this.student_id = student_id;
         }
 
@@ -30,7 +30,10 @@ namespace CMPT391Project
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            EnrolledCourses ECForm = new EnrolledCourses(this.student_id);
+            ECForm.ShowDialog();
+            this.Close();
         }
 
         private void Button2_Click(object sender, EventArgs e)

@@ -47,11 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course_Registration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Course_Registration.Designer.cs">
       <DependentUpon>Course_Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrolledCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrolledCourses.Designer.cs">
+      <DependentUpon>EnrolledCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +79,14 @@
     <Compile Include="Student_Login.Designer.cs">
       <DependentUpon>Student_Login.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course_Registration.resx">
       <DependentUpon>Course_Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrolledCourses.resx">
+      <DependentUpon>EnrolledCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -43,6 +43,7 @@
             this.login_input.Name = "login_input";
             this.login_input.Size = new System.Drawing.Size(296, 32);
             this.login_input.TabIndex = 2;
+            this.login_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_input_KeyPress);
             // 
             // Logo
             // 
@@ -90,7 +91,6 @@
             this.Controls.Add(this.Logo);
             this.Name = "Student_Login";
             this.Text = "Student Login";
-            this.Load += new System.EventHandler(this.Student_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
