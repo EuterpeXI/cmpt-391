@@ -1,6 +1,6 @@
 ﻿namespace CMPT391Project
 {
-    partial class Form1
+    partial class Cart
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(502, 370);
+            this.label1.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(376, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ffdabgjdafsafasfsafsadfsafskbjkafdskjbnsfda";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.label1.Size = new System.Drawing.Size(141, 78);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Cart";
             // 
-            // Form1
+            // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1658, 989);
+            this.ClientSize = new System.Drawing.Size(884, 961);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Cart";
+            this.Text = "Cart";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,4 +59,3 @@
         private System.Windows.Forms.Label label1;
     }
 }
-
