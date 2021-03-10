@@ -5,12 +5,14 @@ fNames = ["Taylor", "Jake", "Sam", "Logan", "Terry", "Jack", "Guy", "Ignore", "P
           "Lucy", "Brandon", "Nicolas", "Chris", "Alex", "Amelia", "Timothy", "Chamod"]
 lNames = ["Smith", "Bolas", "Grant", "Dougan", "Poirier", "Name", "Taylor", "Randall", "Estey", "Jackson", "Chin",
           "Kwan", "Butts", "Placeholder"]
-city = ["Spruce", "Stony", "Edmonton", "Calgary", "Quebec City", "Vancouver", "Victoria", "Toronton"]
+city = ["Spruce", "Stony", "Edmonton", "Calgary",
+        "Quebec City", "Vancouver", "Victoria", "Toronton"]
 provinces = ["AB", "BC", "SK", "QB", "NT", "MT"]
 country = ["CA", "US", "UK", "RU"]
 building = ["Homer", "Flanders", "Marge", "Lisa", "Bart"]
 room = ["11", "12", "13", "14", "21", "22", "23", "31", "32"]
-depts = ["Biol", "Chem", "Phys", "Math", "Cmpt", "Hist", "Engl", "Anth", "Ling", "Stat", "Soci"]
+depts = ["Biol", "Chem", "Phys", "Math", "Cmpt",
+         "Hist", "Engl", "Anth", "Ling", "Stat", "Soci"]
 terms = ["Fall", "Winter"]
 
 days = ["mwf", "tth"]
@@ -113,7 +115,8 @@ class Student(Person):
         return return_string + ", " + self.person_attributes()
 
     def student_string(self):
-        return_string = "" + self.studID + ", '" + self.gender + "', '123456789', '" + str(self.studID) + "@" + "wacewan.org', 'placeholder', '01/01/0001'"
+        return_string = "" + self.studID + ", '" + self.gender + "', '123456789', '" + \
+            str(self.studID) + "@" + "wacewan.org', 'placeholder', '01/01/0001'"
         return return_string + ", " + self.person_string()
 
     def add_class(self, class_added):
@@ -170,7 +173,8 @@ class Department:
         return return_string
 
     def dept_string(self):
-        return_string = "'" + self.name + "', '" + self.building + "', '" + self.room + "'"
+        return_string = "'" + self.name + "', '" + \
+            self.building + "', '" + self.room + "'"
         return return_string
 
     def add_prof(self, prof):
@@ -201,7 +205,8 @@ class Course:
         return return_string
 
     def course_string(self):
-        return_string = "" + self.CID + ", '" + self.title + "', 3, 'Fall', '" + self.dept + "'"
+        return_string = "" + self.CID + ", '" + \
+            self.title + "', 3, 'Fall', '" + self.dept + "'"
         return return_string
 
     def get_CID(self):
@@ -221,21 +226,24 @@ class Section:
         self.c_id = course
 
         day_poss = randint(0, 1)
-        self.timeslot = mwf_timeslots[randint(0, len(mwf_timeslots)-1)] if day_poss == 0 else tth_timeslots[randint(0, len(tth_timeslots)-1)]
+        self.timeslot = mwf_timeslots[randint(0, len(
+            mwf_timeslots)-1)] if day_poss == 0 else tth_timeslots[randint(0, len(tth_timeslots)-1)]
         self.day = days[day_poss]
         time = 7 + self.timeslot
 
-        self.start_time = datetime.datetime.strptime( str(time) + ":00", "%H:%M")
-        self.end_time   = datetime.datetime.strptime( str(time + 1) + ":00", "%H:%M")
+        self.start_time = datetime.datetime.strptime(
+            str(time) + ":00", "%H:%M")
+        self.end_time = datetime.datetime.strptime(
+            str(time + 1) + ":00", "%H:%M")
 
     def course_attributes(self):
-        return_string = "section_id, year, term, start_time, end_time, days, room_number, instructor, course"
+        return_string = "section_id, year, term, start_time, end_time, days, room_number, instructor, course, student_limit"
         return return_string
 
     def course_string(self):
         return_string = "" + self.sect_id + ", '" + str(self.year) + "', '" + self.term + "', '" +\
-        str(self.start_time) + "', '" + str(self.end_time) + "', '" + self.day + "', '" + self.room + "', '" +\
-        self.inst + "', " + str(self.c_id)
+            str(self.start_time) + "', '" + str(self.end_time) + "', '" + self.day + "', '" + self.room + "', '" +\
+            self.inst + "', " + str(self.c_id) + ", " + str(randint(30, 100))
 
         return return_string
 
@@ -276,14 +284,15 @@ def framing(table, attributes, values):
     return command
 
 
-open('query_file.txt', 'w').close()
-my_file = open("query_file.txt", "w+")
+open('query_file.sql', 'w').close()
+my_file = open("query_file.sql", "w+")
 
 # make departments
 departments = []
 for dept_name in depts:
     departments.append(Department(dept_name))
-    my_file.write(framing("department", departments[-1].dept_attributes(), departments[-1].dept_string()) + "\n")
+    my_file.write(framing(
+        "department", departments[-1].dept_attributes(), departments[-1].dept_string()) + "\n")
 
 # make profs
 for indi_dept in departments:
@@ -291,7 +300,8 @@ for indi_dept in departments:
     for i in range(profs_in):
         new_prof = Prof(indi_dept.name)
         indi_dept.add_prof(new_prof)
-        my_file.write(framing("instructor", new_prof.prof_attributes(), new_prof.prof_string()) + "\n")
+        my_file.write(framing(
+            "instructor", new_prof.prof_attributes(), new_prof.prof_string()) + "\n")
     # assign head
     indi_dept.set_head()
 
@@ -300,21 +310,25 @@ students = []
 student_count = randint(10000, 15000)
 for i in range(student_count):
     students.append(Student())
-    my_file.write(framing("student", students[-1].student_attributes(), students[-1].student_string()) + "\n")
+    my_file.write(framing(
+        "student", students[-1].student_attributes(), students[-1].student_string()) + "\n")
 
 # make courses
 for indi_dept in departments:
     cor_num = randint(10, 15)
     for i in range(cor_num):
         indi_dept.add_course()
-        my_file.write(framing("course", indi_dept.courses[-1].course_attributes(), indi_dept.courses[-1].course_string()) + "\n")
+        my_file.write(framing(
+            "course", indi_dept.courses[-1].course_attributes(), indi_dept.courses[-1].course_string()) + "\n")
         # add course pre req
         if i > 3:
             prereqs = []
             num_prereqs = randint(0, 2)
             for i in range(num_prereqs):
-                prereqs.append(Prereqs(indi_dept.courses[-1], indi_dept.courses[randint(0, len(indi_dept.courses)-2)]))
-                my_file.write(framing("prereq", prereqs[-1].pre_attributes(), prereqs[-1].pre_string()) + "\n")
+                prereqs.append(Prereqs(
+                    indi_dept.courses[-1], indi_dept.courses[randint(0, len(indi_dept.courses)-2)]))
+                my_file.write(framing(
+                    "prereq", prereqs[-1].pre_attributes(), prereqs[-1].pre_string()) + "\n")
 
 
 # make sections for year
@@ -329,7 +343,8 @@ for indi_dept in departments:
             cor_sec.append(Section(inst, course.CID))
         sections.append(cor_sec)
         for sect in cor_sec:
-            my_file.write(framing("section", sect.course_attributes(), sect.course_string()) + "\n")
+            my_file.write(
+                framing("section", sect.course_attributes(), sect.course_string()) + "\n")
 
 # give students classes, up to 5 but at least 1
 for stud in students:
@@ -340,15 +355,16 @@ for stud in students:
         if len(poss_classes) < 1:
             break
         class_num = poss_classes.pop()
-        stud.add_class(sections[class_num][randint(0, len(sections[class_num])-1)])
+        stud.add_class(sections[class_num]
+                       [randint(0, len(sections[class_num])-1)])
 
 takes = []
 for stud in students:
     takes.append(stud.get_takes())
     for take in takes[-1]:
-        my_file.write(framing("takes", take.take_attributes(), take.take_string()) + "\n")
+        my_file.write(framing("takes", take.take_attributes(),
+                              take.take_string()) + "\n")
 
 my_file.close()
 
 # start with just the one year
-
