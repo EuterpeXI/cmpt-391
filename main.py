@@ -256,7 +256,7 @@ class Section:
         return return_string
 
     def not_full(self):
-        return self.enrolled >= self.limit
+        return self.enrolled < self.limit
     def increment_enroll(self):
         self.enrolled += 1
     def set_term(self, new_term):
@@ -389,6 +389,7 @@ for indi_dept in departments:
 
 # give students classes, up to 5 but at least 1, , make sure students aren't taking a course and its prereq
 for stud in students:
+    i = 0
     num_courses = randint(1, 6)
     poss_classes = [i for i in range(len(fall_sections) - 1)]
     shuffle(poss_classes)
@@ -396,25 +397,25 @@ for stud in students:
         class_num = poss_classes.pop()
         taking_req = False
         for req in prereqs:
-            requisite = req.get_related(fall_sections[class_num].get_cid())
-            fall_sections[class_num].increment_enroll()
+            requisite = req.get_related(fall_sections[class_num][0].get_cid())
+
             for c in stud.get_courses():
                 if c == requisite:
                     taking_req = True
 
         a = randint(0, len(fall_sections[class_num]) - 1)
-        b = (a + 1)% len(fall_sections[class_num])
+        b = abs((a - 1)% len(fall_sections[class_num]))
         while not fall_sections[class_num][a].not_full() and a != b:
             a = (a+1)% len(fall_sections[class_num])
         if not taking_req and a != b:
-            stud.add_class(fall_sections[class_num]
-                           [randint(0, len(fall_sections[class_num])-1)])
+            fall_sections[class_num][a].increment_enroll()
+            stud.add_class(fall_sections[class_num][a])
             i += 1
 
 takes = []
 for stud in students:
-    takes.append(stud.get_takes())
-    for take in takes[-1]:
+    #takes.append(stud.get_takes())
+    for take in stud.get_takes():
         my_file.write(framing("takes", take.take_attributes(),
                               take.take_string()) + "\n")
 
