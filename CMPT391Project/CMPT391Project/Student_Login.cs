@@ -15,7 +15,7 @@ namespace CMPT391Project
         public Student_Login()
         {
             InitializeComponent();
-            login_input.MaxLength = 10;
+            login_input.MaxLength = 9;
         }
 
         private void Button1_Click(object sender, EventArgs e)
