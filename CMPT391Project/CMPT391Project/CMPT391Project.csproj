@@ -80,6 +80,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnrolledCoursesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EnrolledCoursesDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnrolledCoursesDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EnrolledCoursesDataSetFINAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnrolledCoursesDataSetFINAL.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SectionTermDataSet.Designer.cs">
@@ -160,6 +170,28 @@
     </None>
     <None Include="EnrolledCoursesDataSet.xss">
       <DependentUpon>EnrolledCoursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSet2.xsc">
+      <DependentUpon>EnrolledCoursesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnrolledCoursesDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EnrolledCoursesDataSet2.xss">
+      <DependentUpon>EnrolledCoursesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSetFINAL.xsc">
+      <DependentUpon>EnrolledCoursesDataSetFINAL.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSetFINAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnrolledCoursesDataSetFINAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EnrolledCoursesDataSetFINAL.xss">
+      <DependentUpon>EnrolledCoursesDataSetFINAL.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
