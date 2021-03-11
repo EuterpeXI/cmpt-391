@@ -131,6 +131,9 @@ class Student(Person):
     def get_takes(self):
         return [Takes(self, c.c_id) for c in self.classes]
 
+    def get_courses(self):
+        return self.classes
+
 
 class Prof(Person):
     count = 111111111
@@ -219,11 +222,13 @@ class Section:
     def __init__(self, instructor, course):
         Section.count += 1
         self.sect_id = str(Section.count)
-        self.inst = instructor
-        self.year = 2021
-        self.term = "Fall"
-        self.room = "111"
-        self.c_id = course
+        self.inst  = instructor
+        self.year  = 2021
+        self.term  = "Fall"
+        self.room  = "111"
+        self.c_id  = course
+        self.limit = randint(30, 100)
+        self.enrolled = 0
 
         day_poss = randint(0, 1)
         self.timeslot = mwf_timeslots[randint(0, len(
@@ -236,6 +241,9 @@ class Section:
         self.end_time = datetime.datetime.strptime(
             str(time + 1) + ":00", "%H:%M")
 
+    def get_cid(self):
+        return self.c_id
+
     def course_attributes(self):
         return_string = "section_id, year, term, start_time, end_time, days, room_number, instructor, course, student_limit"
         return return_string
@@ -243,9 +251,16 @@ class Section:
     def course_string(self):
         return_string = "" + self.sect_id + ", '" + str(self.year) + "', '" + self.term + "', '" +\
             str(self.start_time) + "', '" + str(self.end_time) + "', '" + self.day + "', '" + self.room + "', '" +\
-            self.inst + "', " + str(self.c_id) + ", " + str(randint(30, 100))
+            self.inst + "', " + str(self.c_id) + ", " + str(self.limit)
 
         return return_string
+
+    def not_full(self):
+        return self.enrolled >= self.limit
+    def increment_enroll(self):
+        self.enrolled += 1
+    def set_term(self, new_term):
+        self.term = new_term
 
 
 class Prereqs:
@@ -261,6 +276,15 @@ class Prereqs:
     def pre_string(self):
         return_string = "'" + self.course + "', '" + self.prereq + "'"
         return return_string
+
+    def get_related(self, cid):
+        if cid == self.prereq:
+            return self.course
+        if cid == self.course:
+            return self.prereq
+        return cid
+
+
 
 
 class Takes:
@@ -321,7 +345,7 @@ for indi_dept in departments:
         my_file.write(framing(
             "course", indi_dept.courses[-1].course_attributes(), indi_dept.courses[-1].course_string()) + "\n")
         # add course pre req
-        if i > 3:
+        if i > 5:
             prereqs = []
             num_prereqs = randint(0, 2)
             for i in range(num_prereqs):
@@ -332,7 +356,7 @@ for indi_dept in departments:
 
 
 # make sections for year
-sections = []
+fall_sections = []
 for indi_dept in departments:
     for course in indi_dept.get_courses():
         z = randint(1, 4)
@@ -341,22 +365,51 @@ for indi_dept in departments:
             # assign profs to sections
             inst = indi_dept.get_rand_inst().profID
             cor_sec.append(Section(inst, course.CID))
-        sections.append(cor_sec)
+        fall_sections.append(cor_sec)
         for sect in cor_sec:
             my_file.write(
                 framing("section", sect.course_attributes(), sect.course_string()) + "\n")
 
-# give students classes, up to 5 but at least 1
+# create and print the winter courses available
+winter_sections = []
+for indi_dept in departments:
+    for course in indi_dept.get_courses():
+        z = randint(1, 4)
+        cor_sec = []
+        for i in range(z):
+            # assign profs to sections
+            inst = indi_dept.get_rand_inst().profID
+            new_sect = Section(inst, course.CID)
+            new_sect.set_term("Winter")
+            cor_sec.append(new_sect)
+        winter_sections += cor_sec
+        for sect in cor_sec:
+            my_file.write(
+                framing("section", sect.course_attributes(), sect.course_string()) + "\n")
+
+# give students classes, up to 5 but at least 1, , make sure students aren't taking a course and its prereq
 for stud in students:
-    num_courses = randint(1, 7)
-    poss_classes = [i for i in range(len(sections) - 1)]
+    num_courses = randint(1, 6)
+    poss_classes = [i for i in range(len(fall_sections) - 1)]
     shuffle(poss_classes)
-    for i in range(num_courses):
-        if len(poss_classes) < 1:
-            break
+    while i < num_courses and len(poss_classes) > 1:
         class_num = poss_classes.pop()
-        stud.add_class(sections[class_num]
-                       [randint(0, len(sections[class_num])-1)])
+        taking_req = False
+        for req in prereqs:
+            requisite = req.get_related(fall_sections[class_num].get_cid())
+            fall_sections[class_num].increment_enroll()
+            for c in stud.get_courses():
+                if c == requisite:
+                    taking_req = True
+
+        a = randint(0, len(fall_sections[class_num]) - 1)
+        b = (a + 1)% len(fall_sections[class_num])
+        while not fall_sections[class_num][a].not_full() and a != b:
+            a = (a+1)% len(fall_sections[class_num])
+        if not taking_req and a != b:
+            stud.add_class(fall_sections[class_num]
+                           [randint(0, len(fall_sections[class_num])-1)])
+            i += 1
 
 takes = []
 for stud in students:
