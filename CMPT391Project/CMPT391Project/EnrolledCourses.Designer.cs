@@ -29,15 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.enrolledCoursesDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Back_Button = new System.Windows.Forms.Button();
-            this.enrolledCoursesDataSetFINAL = new CMPT391Project.EnrolledCoursesDataSetFINAL();
-            this.checkEnrolledBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkEnrolledTableAdapter = new CMPT391Project.EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,14 +44,19 @@
             this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkEnrolledBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enrolledCoursesDataSetFINAL = new CMPT391Project.EnrolledCoursesDataSetFINAL();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Back_Button = new System.Windows.Forms.Button();
+            this.checkEnrolledTableAdapter = new CMPT391Project.EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.studentIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.studentIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).BeginInit();
+            this.panel1.SuspendLayout();
             this.fillToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,14 +77,14 @@
             this.enrolledCoursesDataGridView1.AutoGenerateColumns = false;
             this.enrolledCoursesDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.enrolledCoursesDataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.enrolledCoursesDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.enrolledCoursesDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.enrolledCoursesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enrolledCoursesDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn,
@@ -99,54 +99,20 @@
             this.endtimeDataGridViewTextBoxColumn,
             this.creditDataGridViewTextBoxColumn});
             this.enrolledCoursesDataGridView1.DataSource = this.checkEnrolledBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.enrolledCoursesDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.enrolledCoursesDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.enrolledCoursesDataGridView1.Location = new System.Drawing.Point(32, 168);
             this.enrolledCoursesDataGridView1.Name = "enrolledCoursesDataGridView1";
             this.enrolledCoursesDataGridView1.ReadOnly = true;
             this.enrolledCoursesDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.enrolledCoursesDataGridView1.Size = new System.Drawing.Size(1744, 720);
             this.enrolledCoursesDataGridView1.TabIndex = 8;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.Back_Button);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1796, 56);
-            this.panel1.TabIndex = 9;
-            // 
-            // Back_Button
-            // 
-            this.Back_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back_Button.Location = new System.Drawing.Point(8, 8);
-            this.Back_Button.Name = "Back_Button";
-            this.Back_Button.Size = new System.Drawing.Size(200, 40);
-            this.Back_Button.TabIndex = 5;
-            this.Back_Button.Text = "< Student Homepage";
-            this.Back_Button.UseVisualStyleBackColor = true;
-            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
-            // 
-            // enrolledCoursesDataSetFINAL
-            // 
-            this.enrolledCoursesDataSetFINAL.DataSetName = "EnrolledCoursesDataSetFINAL";
-            this.enrolledCoursesDataSetFINAL.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // checkEnrolledBindingSource
-            // 
-            this.checkEnrolledBindingSource.DataMember = "checkEnrolled";
-            this.checkEnrolledBindingSource.DataSource = this.enrolledCoursesDataSetFINAL;
-            // 
-            // checkEnrolledTableAdapter
-            // 
-            this.checkEnrolledTableAdapter.ClearBeforeFill = true;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -225,6 +191,40 @@
             this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
             this.creditDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // checkEnrolledBindingSource
+            // 
+            this.checkEnrolledBindingSource.DataMember = "checkEnrolled";
+            this.checkEnrolledBindingSource.DataSource = this.enrolledCoursesDataSetFINAL;
+            // 
+            // enrolledCoursesDataSetFINAL
+            // 
+            this.enrolledCoursesDataSetFINAL.DataSetName = "EnrolledCoursesDataSetFINAL";
+            this.enrolledCoursesDataSetFINAL.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Back_Button);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1796, 56);
+            this.panel1.TabIndex = 9;
+            // 
+            // Back_Button
+            // 
+            this.Back_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back_Button.Location = new System.Drawing.Point(8, 8);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.Size = new System.Drawing.Size(200, 40);
+            this.Back_Button.TabIndex = 5;
+            this.Back_Button.Text = "< Student Homepage";
+            this.Back_Button.UseVisualStyleBackColor = true;
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
+            // 
+            // checkEnrolledTableAdapter
+            // 
+            this.checkEnrolledTableAdapter.ClearBeforeFill = true;
+            // 
             // fillToolStrip
             // 
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -246,13 +246,14 @@
             // studentIDToolStripTextBox
             // 
             this.studentIDToolStripTextBox.Name = "studentIDToolStripTextBox";
-            this.studentIDToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            this.studentIDToolStripTextBox.ReadOnly = true;
+            this.studentIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // fillToolStripButton
             // 
             this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillToolStripButton.Name = "fillToolStripButton";
-            this.fillToolStripButton.Size = new System.Drawing.Size(26, 19);
+            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
             this.fillToolStripButton.Text = "Fill";
             this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
             // 
@@ -269,9 +270,9 @@
             this.Text = "EnrolledCourses";
             this.Load += new System.EventHandler(this.EnrolledCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
             this.ResumeLayout(false);

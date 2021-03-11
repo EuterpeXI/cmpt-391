@@ -14,7 +14,13 @@ namespace CMPT391Project
     {
         public Cart()
         {
+            // List<Dictionary<string, string>> courses
             InitializeComponent();
+        }
+
+        private void Register_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

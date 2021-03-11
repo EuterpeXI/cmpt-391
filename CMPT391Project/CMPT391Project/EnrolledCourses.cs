@@ -46,19 +46,5 @@ namespace CMPT391Project
             }
 
         }
-
-        //private void fillToolStripButton_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        this.checkEnrolledTableAdapter.Fill(this.enrolledCoursesDataSet.checkEnrolled, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.studentID, typeof(int))))));
-        //        studentIDToolStripTextBox.Text = this.studentID.ToString();
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        System.Windows.Forms.MessageBox.Show(ex.Message);
-        //    }
-
-        //}
     }
 }
