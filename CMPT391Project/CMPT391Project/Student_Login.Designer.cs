@@ -33,7 +33,9 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.login_button = new System.Windows.Forms.Button();
             this.studentID_label = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // login_input
@@ -79,6 +81,16 @@
             this.studentID_label.TabIndex = 4;
             this.studentID_label.Text = "Student ID";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(640, 776);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 193);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Student_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,9 +101,11 @@
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.login_input);
             this.Controls.Add(this.Logo);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Student_Login";
             this.Text = "Student Login";
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +117,6 @@
         private System.Windows.Forms.Button login_button;
         private System.Windows.Forms.Label studentID_label;
         private System.Windows.Forms.TextBox login_input;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

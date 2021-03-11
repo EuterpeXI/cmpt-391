@@ -32,5 +32,34 @@ namespace CMPT391Project
             Cart CartForm = new Cart();
             CartForm.Show();
         }
+
+        private void Course_Registration_Load(object sender, EventArgs e)
+        {
+            this.sectionTableAdapter2.Fill(this.sectionTermDataSet.section);
+            // For department dropdownlist
+            this.departmentTableAdapter.Fill(this.collegeDataSet1.department);
+
+            // For term dropdown list
+            this.sectionTableAdapter1.Fill(this.collegeDataSet1.section);
+            try
+            {
+                this.sectionTableAdapter2.FillBy(this.sectionTermDataSet.section);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+            // For year dropdown list
+            this.sectionTableAdapter.Fill(this.sectionYearDataSet.section);
+            try
+            {
+                this.sectionTableAdapter.FillBy1(this.sectionYearDataSet.section);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
