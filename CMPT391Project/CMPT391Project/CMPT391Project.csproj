@@ -53,6 +53,16 @@
     <Compile Include="Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="CollegeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CollegeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CollegeDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Course_Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,8 +75,23 @@
     <Compile Include="EnrolledCourses.Designer.cs">
       <DependentUpon>EnrolledCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnrolledCoursesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnrolledCoursesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectionTermDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SectionTermDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SectionYearDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SectionYearDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Student_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +128,39 @@
     <EmbeddedResource Include="Student_Login.resx">
       <DependentUpon>Student_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CollegeDataSet.xsc">
+      <DependentUpon>CollegeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CollegeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CollegeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CollegeDataSet.xss">
+      <DependentUpon>CollegeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CollegeDataSet1.xsc">
+      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CollegeDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CollegeDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CollegeDataSet1.xss">
+      <DependentUpon>CollegeDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSet.xsc">
+      <DependentUpon>EnrolledCoursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EnrolledCoursesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnrolledCoursesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EnrolledCoursesDataSet.xss">
+      <DependentUpon>EnrolledCoursesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +170,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SectionTermDataSet.xsc">
+      <DependentUpon>SectionTermDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SectionTermDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SectionTermDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectionTermDataSet.xss">
+      <DependentUpon>SectionTermDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SectionYearDataSet.xsc">
+      <DependentUpon>SectionYearDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SectionYearDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SectionYearDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SectionYearDataSet.xss">
+      <DependentUpon>SectionYearDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
