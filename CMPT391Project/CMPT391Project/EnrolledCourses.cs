@@ -37,7 +37,7 @@ namespace CMPT391Project
         {
             try
             {
-                this.checkEnrolledTableAdapter.Fill(this.enrolledCoursesDataSet.checkEnrolled, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.studentID, typeof(int))))));
+                this.checkEnrolledTableAdapter.Fill(this.enrolledCoursesDataSetFINAL.checkEnrolled, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.studentID, typeof(int))))));
                 studentIDToolStripTextBox.Text = this.studentID.ToString();
             }
             catch (System.Exception ex)

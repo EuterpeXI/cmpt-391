@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Submit_Button = new System.Windows.Forms.Button();
+            this.Register_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,22 +52,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(720, 632);
             this.dataGridView1.TabIndex = 7;
             // 
-            // Submit_Button
+            // Register_Button
             // 
-            this.Submit_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submit_Button.Location = new System.Drawing.Point(280, 784);
-            this.Submit_Button.Name = "Submit_Button";
-            this.Submit_Button.Size = new System.Drawing.Size(240, 48);
-            this.Submit_Button.TabIndex = 8;
-            this.Submit_Button.Text = "Register";
-            this.Submit_Button.UseVisualStyleBackColor = true;
+            this.Register_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Register_Button.Location = new System.Drawing.Point(280, 784);
+            this.Register_Button.Name = "Register_Button";
+            this.Register_Button.Size = new System.Drawing.Size(240, 48);
+            this.Register_Button.TabIndex = 8;
+            this.Register_Button.Text = "Register";
+            this.Register_Button.UseVisualStyleBackColor = true;
+            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 861);
-            this.Controls.Add(this.Submit_Button);
+            this.Controls.Add(this.Register_Button);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Cart";
@@ -82,6 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Submit_Button;
+        private System.Windows.Forms.Button Register_Button;
     }
 }

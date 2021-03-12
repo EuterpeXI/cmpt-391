@@ -34,22 +34,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.enrolledCoursesDataGridView1 = new System.Windows.Forms.DataGridView();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.starttimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkEnrolledBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enrolledCoursesDataSet = new CMPT391Project.EnrolledCoursesDataSet();
+            this.enrolledCoursesDataSetFINAL = new CMPT391Project.EnrolledCoursesDataSetFINAL();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Cart_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.checkEnrolledTableAdapter = new CMPT391Project.EnrolledCoursesDataSetTableAdapters.checkEnrolledTableAdapter();
+            this.checkEnrolledTableAdapter = new CMPT391Project.EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.studentIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.studentIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).BeginInit();
             this.panel1.SuspendLayout();
             this.fillToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 72);
+            this.label1.Location = new System.Drawing.Point(688, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(468, 78);
             this.label1.TabIndex = 6;
@@ -82,9 +88,16 @@
             this.enrolledCoursesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enrolledCoursesDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn,
-            this.creditDataGridViewTextBoxColumn,
+            this.sectionidDataGridViewTextBoxColumn,
+            this.departmentDataGridViewTextBoxColumn,
             this.termDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn});
+            this.yearDataGridViewTextBoxColumn,
+            this.instructorDataGridViewTextBoxColumn,
+            this.roomnumberDataGridViewTextBoxColumn,
+            this.daysDataGridViewTextBoxColumn,
+            this.starttimeDataGridViewTextBoxColumn,
+            this.endtimeDataGridViewTextBoxColumn,
+            this.creditDataGridViewTextBoxColumn});
             this.enrolledCoursesDataGridView1.DataSource = this.checkEnrolledBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -98,7 +111,7 @@
             this.enrolledCoursesDataGridView1.Name = "enrolledCoursesDataGridView1";
             this.enrolledCoursesDataGridView1.ReadOnly = true;
             this.enrolledCoursesDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.enrolledCoursesDataGridView1.Size = new System.Drawing.Size(720, 720);
+            this.enrolledCoursesDataGridView1.Size = new System.Drawing.Size(1744, 720);
             this.enrolledCoursesDataGridView1.TabIndex = 8;
             // 
             // titleDataGridViewTextBoxColumn
@@ -108,19 +121,12 @@
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // creditDataGridViewTextBoxColumn
+            // sectionidDataGridViewTextBoxColumn
             // 
-            this.creditDataGridViewTextBoxColumn.DataPropertyName = "credit";
-            this.creditDataGridViewTextBoxColumn.HeaderText = "credit";
-            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
-            this.creditDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // termDataGridViewTextBoxColumn
-            // 
-            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
-            this.termDataGridViewTextBoxColumn.HeaderText = "term";
-            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
-            this.termDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sectionidDataGridViewTextBoxColumn.DataPropertyName = "section_id";
+            this.sectionidDataGridViewTextBoxColumn.HeaderText = "section_id";
+            this.sectionidDataGridViewTextBoxColumn.Name = "sectionidDataGridViewTextBoxColumn";
+            this.sectionidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // departmentDataGridViewTextBoxColumn
             // 
@@ -129,35 +135,80 @@
             this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
             this.departmentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // termDataGridViewTextBoxColumn
+            // 
+            this.termDataGridViewTextBoxColumn.DataPropertyName = "term";
+            this.termDataGridViewTextBoxColumn.HeaderText = "term";
+            this.termDataGridViewTextBoxColumn.Name = "termDataGridViewTextBoxColumn";
+            this.termDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // instructorDataGridViewTextBoxColumn
+            // 
+            this.instructorDataGridViewTextBoxColumn.DataPropertyName = "instructor";
+            this.instructorDataGridViewTextBoxColumn.HeaderText = "instructor";
+            this.instructorDataGridViewTextBoxColumn.Name = "instructorDataGridViewTextBoxColumn";
+            this.instructorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // roomnumberDataGridViewTextBoxColumn
+            // 
+            this.roomnumberDataGridViewTextBoxColumn.DataPropertyName = "room_number";
+            this.roomnumberDataGridViewTextBoxColumn.HeaderText = "room_number";
+            this.roomnumberDataGridViewTextBoxColumn.Name = "roomnumberDataGridViewTextBoxColumn";
+            this.roomnumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // daysDataGridViewTextBoxColumn
+            // 
+            this.daysDataGridViewTextBoxColumn.DataPropertyName = "days";
+            this.daysDataGridViewTextBoxColumn.HeaderText = "days";
+            this.daysDataGridViewTextBoxColumn.Name = "daysDataGridViewTextBoxColumn";
+            this.daysDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // starttimeDataGridViewTextBoxColumn
+            // 
+            this.starttimeDataGridViewTextBoxColumn.DataPropertyName = "start_time";
+            this.starttimeDataGridViewTextBoxColumn.HeaderText = "start_time";
+            this.starttimeDataGridViewTextBoxColumn.Name = "starttimeDataGridViewTextBoxColumn";
+            this.starttimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endtimeDataGridViewTextBoxColumn
+            // 
+            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "end_time";
+            this.endtimeDataGridViewTextBoxColumn.HeaderText = "end_time";
+            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
+            this.endtimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // creditDataGridViewTextBoxColumn
+            // 
+            this.creditDataGridViewTextBoxColumn.DataPropertyName = "credit";
+            this.creditDataGridViewTextBoxColumn.HeaderText = "credit";
+            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
+            this.creditDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // checkEnrolledBindingSource
             // 
             this.checkEnrolledBindingSource.DataMember = "checkEnrolled";
-            this.checkEnrolledBindingSource.DataSource = this.enrolledCoursesDataSet;
+            this.checkEnrolledBindingSource.DataSource = this.enrolledCoursesDataSetFINAL;
             // 
-            // enrolledCoursesDataSet
+            // enrolledCoursesDataSetFINAL
             // 
-            this.enrolledCoursesDataSet.DataSetName = "EnrolledCoursesDataSet";
-            this.enrolledCoursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.enrolledCoursesDataSetFINAL.DataSetName = "EnrolledCoursesDataSetFINAL";
+            this.enrolledCoursesDataSetFINAL.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.Cart_Button);
             this.panel1.Controls.Add(this.Back_Button);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 56);
+            this.panel1.Size = new System.Drawing.Size(1796, 56);
             this.panel1.TabIndex = 9;
-            // 
-            // Cart_Button
-            // 
-            this.Cart_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cart_Button.Location = new System.Drawing.Point(1336, 8);
-            this.Cart_Button.Name = "Cart_Button";
-            this.Cart_Button.Size = new System.Drawing.Size(240, 48);
-            this.Cart_Button.TabIndex = 6;
-            this.Cart_Button.Text = "Cart";
-            this.Cart_Button.UseVisualStyleBackColor = true;
             // 
             // Back_Button
             // 
@@ -182,7 +233,7 @@
             this.fillToolStripButton});
             this.fillToolStrip.Location = new System.Drawing.Point(0, 56);
             this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(784, 25);
+            this.fillToolStrip.Size = new System.Drawing.Size(1796, 25);
             this.fillToolStrip.TabIndex = 10;
             this.fillToolStrip.Text = "fillToolStrip";
             // 
@@ -194,7 +245,6 @@
             // 
             // studentIDToolStripTextBox
             // 
-            this.studentIDToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.studentIDToolStripTextBox.Name = "studentIDToolStripTextBox";
             this.studentIDToolStripTextBox.ReadOnly = true;
             this.studentIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
@@ -211,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 911);
+            this.ClientSize = new System.Drawing.Size(1796, 911);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.enrolledCoursesDataGridView1);
@@ -221,7 +271,7 @@
             this.Load += new System.EventHandler(this.EnrolledCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).EndInit();
             this.panel1.ResumeLayout(false);
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
@@ -235,15 +285,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView enrolledCoursesDataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Cart_Button;
         private System.Windows.Forms.Button Back_Button;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectionidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn termDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instructorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daysDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn starttimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource checkEnrolledBindingSource;
-        private EnrolledCoursesDataSet enrolledCoursesDataSet;
-        private EnrolledCoursesDataSetTableAdapters.checkEnrolledTableAdapter checkEnrolledTableAdapter;
+        private EnrolledCoursesDataSetFINAL enrolledCoursesDataSetFINAL;
+        private EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter checkEnrolledTableAdapter;
         private System.Windows.Forms.ToolStrip fillToolStrip;
         private System.Windows.Forms.ToolStripLabel studentIDToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox studentIDToolStripTextBox;
