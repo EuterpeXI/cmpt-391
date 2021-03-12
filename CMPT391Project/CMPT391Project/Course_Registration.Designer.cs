@@ -53,6 +53,9 @@
             this.sectionTableAdapter1 = new CMPT391Project.CollegeDataSet1TableAdapters.sectionTableAdapter();
             this.departmentTableAdapter = new CMPT391Project.CollegeDataSet1TableAdapters.departmentTableAdapter();
             this.sectionTableAdapter2 = new CMPT391Project.SectionTermDataSetTableAdapters.sectionTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchResultLabel = new System.Windows.Forms.Label();
+            this.collegeDataSet2 = new CMPT391Project.CollegeDataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sectionYearDataSet)).BeginInit();
@@ -64,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collegeDataSet1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collegeDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,6 +145,7 @@
             this.termComboBox.Size = new System.Drawing.Size(152, 28);
             this.termComboBox.TabIndex = 8;
             this.termComboBox.ValueMember = "term";
+            this.termComboBox.SelectedIndexChanged += new System.EventHandler(this.termComboBox_SelectedIndexChanged);
             // 
             // sectionBindingSource2
             // 
@@ -221,12 +226,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(40, 232);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1504, 896);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // sectionTableAdapter
             // 
@@ -244,11 +258,37 @@
             // 
             this.sectionTableAdapter2.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.Location = new System.Drawing.Point(1043, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 28);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // searchResultLabel
+            // 
+            this.searchResultLabel.AutoSize = true;
+            this.searchResultLabel.Location = new System.Drawing.Point(1181, 180);
+            this.searchResultLabel.Name = "searchResultLabel";
+            this.searchResultLabel.Size = new System.Drawing.Size(0, 20);
+            this.searchResultLabel.TabIndex = 15;
+            // 
+            // collegeDataSet2
+            // 
+            this.collegeDataSet2.DataSetName = "CollegeDataSet";
+            this.collegeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Course_Registration
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.ClientSize = new System.Drawing.Size(1584, 1061);
+            this.Controls.Add(this.searchResultLabel);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.departmentComboBox);
@@ -273,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collegeDataSet1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collegeDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +344,9 @@
         private SectionTermDataSet sectionTermDataSet;
         private System.Windows.Forms.BindingSource sectionBindingSource2;
         private SectionTermDataSetTableAdapters.sectionTableAdapter sectionTableAdapter2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label searchResultLabel;
+        private CollegeDataSet collegeDataSet2;
     }
 }
 
