@@ -12,7 +12,7 @@ country = ["CA", "US", "UK", "RU"]
 building = ["Homer", "Flanders", "Marge", "Lisa", "Bart"]
 room = ["11", "12", "13", "14", "21", "22", "23", "31", "32"]
 depts = ["Biol", "Chem", "Phys", "Math", "Cmpt",
-         "Hist", "Engl", "Anth", "Ling", "Stat", "Soci"]
+         "Hist", "Engl", "Anth", "Stat", "Soci"]
 terms = ["Fall", "Winter"]
 
 days = ["mwf", "tth"]
@@ -129,7 +129,7 @@ class Student(Person):
                     break
 
     def get_takes(self):
-        return [Takes(self, c.c_id) for c in self.classes]
+        return [Takes(self, c.sect_id) for c in self.classes]
 
     def get_courses(self):
         return self.classes
@@ -338,15 +338,15 @@ for i in range(student_count):
         "student", students[-1].student_attributes(), students[-1].student_string()) + "\n")
 
 # make courses
+prereqs = []
 for indi_dept in departments:
-    cor_num = randint(10, 15)
+    cor_num = randint(2, 4)
     for i in range(cor_num):
         indi_dept.add_course()
         my_file.write(framing(
             "course", indi_dept.courses[-1].course_attributes(), indi_dept.courses[-1].course_string()) + "\n")
         # add course pre req
         if i > 5:
-            prereqs = []
             num_prereqs = randint(0, 2)
             for i in range(num_prereqs):
                 prereqs.append(Prereqs(
@@ -359,7 +359,7 @@ for indi_dept in departments:
 fall_sections = []
 for indi_dept in departments:
     for course in indi_dept.get_courses():
-        z = randint(1, 4)
+        z = randint(1, 2)
         cor_sec = []
         for i in range(z):
             # assign profs to sections
@@ -374,7 +374,7 @@ for indi_dept in departments:
 winter_sections = []
 for indi_dept in departments:
     for course in indi_dept.get_courses():
-        z = randint(1, 4)
+        z = randint(1, 2)
         cor_sec = []
         for i in range(z):
             # assign profs to sections
@@ -390,7 +390,7 @@ for indi_dept in departments:
 # give students classes, up to 5 but at least 1, , make sure students aren't taking a course and its prereq
 for stud in students:
     i = 0
-    num_courses = randint(1, 6)
+    num_courses = randint(1, 7)
     poss_classes = [i for i in range(len(fall_sections) - 1)]
     shuffle(poss_classes)
     while i < num_courses and len(poss_classes) > 1:
@@ -403,11 +403,10 @@ for stud in students:
                 if c == requisite:
                     taking_req = True
 
-        a = randint(0, len(fall_sections[class_num]) - 1)
-        b = abs((a - 1)% len(fall_sections[class_num]))
-        while not fall_sections[class_num][a].not_full() and a != b:
-            a = (a+1)% len(fall_sections[class_num])
-        if not taking_req and a != b:
+        a = randint(0, len(fall_sections[class_num])-1)
+        while a < len(fall_sections[class_num]) and not fall_sections[class_num][a].not_full():
+            a = a+1
+        if not taking_req and a < len(fall_sections[class_num]) and fall_sections[class_num][a].not_full():
             fall_sections[class_num][a].increment_enroll()
             stud.add_class(fall_sections[class_num][a])
             i += 1
