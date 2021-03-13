@@ -76,32 +76,6 @@ namespace CMPT391Project
             departmentComboBox.DataSource = collegeDB.executeFetchCommand("select d.name from department d;").Tables[0];
             // get distinct terms
             termComboBox.DataSource = collegeDB.executeFetchCommand("select distinct s.[term] from section s;").Tables[0];
-            /*
-            // For department dropdownlist
-            this.departmentTableAdapter.Fill(collegeDB.executeFetchCommand("select d.name from department;"));
-
-            // For term dropdown list
-            this.sectionTableAdapter1.Fill(this.collegeDataSet1.section);
-            try
-            {
-                this.sectionTableAdapter2.FillBy(this.sectionTermDataSet.section);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-            // For year dropdown list
-            this.sectionTableAdapter.Fill(this.sectionYearDataSet.section);
-            try
-            {
-                this.sectionTableAdapter.FillBy1(this.sectionYearDataSet.section);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-            */
 
         }
 

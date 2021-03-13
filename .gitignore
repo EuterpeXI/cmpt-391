@@ -12,6 +12,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+CMPT391Project/CMPT391Project/App.config/
 
 # Mono auto generated files
 mono_crash.*

@@ -12,6 +12,7 @@ namespace CMPT391Project
 {
     public partial class EnrolledCourses : Form
     {
+        private SQLController collegeDB = new SQLController();
         int studentID;
 
         public EnrolledCourses(int student_id)
@@ -30,21 +31,7 @@ namespace CMPT391Project
 
         private void EnrolledCourses_Load(object sender, EventArgs e)
         {
-            fillToolStripButton_Click(sender, e);
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.checkEnrolledTableAdapter.Fill(this.enrolledCoursesDataSetFINAL.checkEnrolled, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.studentID, typeof(int))))));
-                studentIDToolStripTextBox.Text = this.studentID.ToString();
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            enrolledCoursesDataGridView1.DataSource = collegeDB.executeFetchCommand("EXEC checkEnrolled @studentID = '" + this.studentID + "';").Tables[0];
         }
     }
 }

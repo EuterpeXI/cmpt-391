@@ -130,6 +130,7 @@
             this.Controls.Add(this.StudentIDLabel);
             this.Name = "Student_Homepage";
             this.Text = "Student_Homepage";
+            this.Load += new System.EventHandler(this.Student_Homepage_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

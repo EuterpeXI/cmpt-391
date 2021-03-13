@@ -49,15 +49,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Back_Button = new System.Windows.Forms.Button();
             this.checkEnrolledTableAdapter = new CMPT391Project.EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter();
-            this.fillToolStrip = new System.Windows.Forms.ToolStrip();
-            this.studentIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.studentIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).BeginInit();
             this.panel1.SuspendLayout();
-            this.fillToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -225,44 +220,11 @@
             // 
             this.checkEnrolledTableAdapter.ClearBeforeFill = true;
             // 
-            // fillToolStrip
-            // 
-            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentIDToolStripLabel,
-            this.studentIDToolStripTextBox,
-            this.fillToolStripButton});
-            this.fillToolStrip.Location = new System.Drawing.Point(0, 56);
-            this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(1796, 25);
-            this.fillToolStrip.TabIndex = 10;
-            this.fillToolStrip.Text = "fillToolStrip";
-            // 
-            // studentIDToolStripLabel
-            // 
-            this.studentIDToolStripLabel.Name = "studentIDToolStripLabel";
-            this.studentIDToolStripLabel.Size = new System.Drawing.Size(61, 22);
-            this.studentIDToolStripLabel.Text = "studentID:";
-            // 
-            // studentIDToolStripTextBox
-            // 
-            this.studentIDToolStripTextBox.Name = "studentIDToolStripTextBox";
-            this.studentIDToolStripTextBox.ReadOnly = true;
-            this.studentIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillToolStripButton
-            // 
-            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillToolStripButton.Name = "fillToolStripButton";
-            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
-            this.fillToolStripButton.Text = "Fill";
-            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
-            // 
             // EnrolledCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1796, 911);
-            this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.enrolledCoursesDataGridView1);
             this.Controls.Add(this.label1);
@@ -273,8 +235,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEnrolledBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrolledCoursesDataSetFINAL)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.fillToolStrip.ResumeLayout(false);
-            this.fillToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,9 +260,5 @@
         private System.Windows.Forms.BindingSource checkEnrolledBindingSource;
         private EnrolledCoursesDataSetFINAL enrolledCoursesDataSetFINAL;
         private EnrolledCoursesDataSetFINALTableAdapters.checkEnrolledTableAdapter checkEnrolledTableAdapter;
-        private System.Windows.Forms.ToolStrip fillToolStrip;
-        private System.Windows.Forms.ToolStripLabel studentIDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox studentIDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillToolStripButton;
     }
 }

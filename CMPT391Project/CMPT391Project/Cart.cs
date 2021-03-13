@@ -24,7 +24,6 @@ namespace CMPT391Project
         /// <param name="studentID">ID of student logged in</param>
         public Cart(List<Dictionary<string, string>> courses, int studentID)
         {
-            // List<Dictionary<string, string>> courses
             this.courses = courses;
             this.studentID = studentID;
             foreach (Dictionary<string, string> course in courses)
@@ -41,14 +40,11 @@ namespace CMPT391Project
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Register_Button_Click(object sender, EventArgs e)
-         
         {
-          
             SQLController SQLhandler = new SQLController();
             
             foreach (Dictionary<string, string> course in courses)
             {
-
                 // Check if prerequisites are met
                 if (course.TryGetValue("Course", out string courseID))
                 {
@@ -69,6 +65,9 @@ namespace CMPT391Project
                                 // query for inserting for section
                                 query = "EXEC dbo.insertSection @studentID = '" + studentID + "', @sectionID = '" + sectionID + "';";
                                 SQLhandler.executeSetCommand(query);
+                                Error_Text.Visible = true;
+                                Error_Text.Text = "Yay you registered into your classes... b.b.baka it's not like I wanted you to register or anything o.o";
+                                Error_Text.ForeColor = Color.Green;
                             }
                             else {
 
@@ -77,7 +76,6 @@ namespace CMPT391Project
                                 return;
 
                             }
-
                         }
                         // Prerequisites are not met
                         else
@@ -91,11 +89,9 @@ namespace CMPT391Project
                     // Error getting prerequisites
                     else
                     {
-
                         Error_Text.Visible = true;
                         Error_Text.Text = "Ewwow checking prerequisites (・`ω´・) ";
                         return;
-
                     }
 
                 }
@@ -108,7 +104,6 @@ namespace CMPT391Project
         private void Populate_Cart()
 
         {
-
             // Add the headers
             foreach (var tableHeading in courses[0])
             {
@@ -127,7 +122,6 @@ namespace CMPT391Project
                     row.Cells[kvp.Key].Value = kvp.Value;
 
                 }
-
             }
         }
 

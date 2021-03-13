@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPT391Project
 {
     public partial class Student_Homepage : Form
     {
         int student_id;
+        private SQLController collegeDB = new SQLController();
+
         public Student_Homepage(int student_id)
         {
             InitializeComponent();
@@ -42,6 +45,20 @@ namespace CMPT391Project
             Course_Registration CRForm = new Course_Registration(this.student_id);
             CRForm.ShowDialog();
             this.Close();
+        }
+
+        private void Student_Homepage_Load(object sender, EventArgs e)
+        {
+            String query = "SELECT first_name, last_name FROM student WHERE s_id = '" + this.student_id + "';";
+            DataSet queryResult = collegeDB.executeFetchCommand(query);
+            if (queryResult.Tables.Count > 0)
+            {
+                StudentNameLabel.Text = queryResult.Tables[0].Rows[0][0].ToString() + " " + queryResult.Tables[0].Rows[0][1].ToString();
+            }
+            else
+            {
+                StudentNameLabel.Text = "Name not found";
+            }
         }
     }
 }
