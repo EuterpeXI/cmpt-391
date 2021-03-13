@@ -123,6 +123,7 @@
             this.yearComboBox.Size = new System.Drawing.Size(121, 28);
             this.yearComboBox.TabIndex = 7;
             this.yearComboBox.ValueMember = "year";
+            this.yearComboBox.SelectedIndexChanged += new System.EventHandler(this.yearComboBox_SelectedIndexChanged);
             // 
             // sectionBindingSource
             // 

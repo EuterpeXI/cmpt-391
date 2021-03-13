@@ -47,6 +47,7 @@ namespace CMPT391Project
                         temp.Add(dataGridView1.Columns[ii].HeaderText, DGS[ii].Value.ToString());
                     }
                     chosenClasses.Add(temp);
+                    temp = new Dictionary<string, string>();
                 }
                 
                 // pass them to the cart along with student id
@@ -67,9 +68,17 @@ namespace CMPT391Project
 
         private void Course_Registration_Load(object sender, EventArgs e)
         {
-            this.sectionTableAdapter2.Fill(this.sectionTermDataSet.section);
+
+            // should check that they are not empty first
+            // get distinct years
+            yearComboBox.DataSource = collegeDB.executeFetchCommand("select distinct s.[year] from section s;").Tables[0];
+            // get every department
+            departmentComboBox.DataSource = collegeDB.executeFetchCommand("select d.name from department d;").Tables[0];
+            // get distinct terms
+            termComboBox.DataSource = collegeDB.executeFetchCommand("select distinct s.[term] from section s;").Tables[0];
+            /*
             // For department dropdownlist
-            this.departmentTableAdapter.Fill(this.collegeDataSet1.department);
+            this.departmentTableAdapter.Fill(collegeDB.executeFetchCommand("select d.name from department;"));
 
             // For term dropdown list
             this.sectionTableAdapter1.Fill(this.collegeDataSet1.section);
@@ -92,6 +101,8 @@ namespace CMPT391Project
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+            */
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,8 +111,8 @@ namespace CMPT391Project
             String year = yearComboBox.Text;
             String term = termComboBox.Text;
             String dept = departmentComboBox.Text;
-            System.Windows.Forms.MessageBox.Show(year + " " + term + " " + dept);
-            if (year == null || term == null || dept == null)
+            //System.Windows.Forms.MessageBox.Show(year + " " + term + " " + dept);
+            if (year == "" || term == "" || dept == "")
             {
                 // change a label to warn that it is null
                 searchResultLabel.Text = "Please choose options for all fields";
@@ -139,6 +150,11 @@ namespace CMPT391Project
         }
 
         private void termComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yearComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

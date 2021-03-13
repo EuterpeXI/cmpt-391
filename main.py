@@ -340,7 +340,7 @@ for i in range(student_count):
 # make courses
 prereqs = []
 for indi_dept in departments:
-    cor_num = randint(2, 4)
+    cor_num = randint(5, 15)
     for i in range(cor_num):
         indi_dept.add_course()
         my_file.write(framing(
