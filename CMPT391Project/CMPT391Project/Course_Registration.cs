@@ -51,7 +51,7 @@ namespace CMPT391Project
                 }
                 
                 // pass them to the cart along with student id
-                Cart CartForm = new Cart();
+                Cart CartForm = new Cart(chosenClasses, student_id);
                 CartForm.Show();
             }
             else

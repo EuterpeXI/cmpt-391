@@ -15,7 +15,7 @@ namespace CMPT391Project
         private SqlConnection sqlCon;
         private SqlCommand command;
         // set to local server for whoever is using
-        private static String conStr = "Server = DESKTOP-BR2712G; Database = College; Trusted_Connection = yes;";
+        private static String conStr = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT391Project.Properties.Settings.CollegeConnectionString"].ConnectionString;
         public SQLController()
         {
 
