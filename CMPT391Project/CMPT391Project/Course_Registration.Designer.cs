@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Course_Registration));
             this.label1 = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -301,6 +302,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Course_Registration";
             this.Text = "Course Registration";
             this.Load += new System.EventHandler(this.Course_Registration_Load);
