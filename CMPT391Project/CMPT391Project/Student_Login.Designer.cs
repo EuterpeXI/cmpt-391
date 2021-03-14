@@ -35,8 +35,10 @@
             this.studentID_label = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shameText = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // login_input
@@ -104,6 +106,16 @@
             this.shameText.Visible = false;
             this.shameText.Click += new System.EventHandler(this.shameText_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(240, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(336, 257);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
             // Student_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,12 +128,14 @@
             this.Controls.Add(this.login_input);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Student_Login";
             this.Text = "Student Login";
             this.Load += new System.EventHandler(this.Student_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +149,6 @@
         private System.Windows.Forms.TextBox login_input;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label shameText;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

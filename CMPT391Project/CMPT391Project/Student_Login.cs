@@ -36,7 +36,7 @@ namespace CMPT391Project
                 else
                 {
                     // shame them
-                    shameText.Text = "Please Enter a Valid ID";
+                    shameText.Text = "Shame on you. Pwease enter a valid student ID";
                     shameText.ForeColor = Color.FromName("Red");
                     shameText.Visible = true;
 
