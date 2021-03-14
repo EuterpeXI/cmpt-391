@@ -26,7 +26,7 @@ namespace CMPT391Project.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AMELIACHIN-PC;Initial Catalog=College;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server = DESKTOP-BR2712G; Database = College; Trusted_Connection = yes;")]
         public string CollegeConnectionString {
             get {
                 return ((string)(this["CollegeConnectionString"]));

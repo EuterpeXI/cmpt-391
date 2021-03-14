@@ -12,6 +12,7 @@ namespace CMPT391Project
 {
     public partial class Student_Login : Form
     {
+        private SQLController collegeDB = new SQLController();
         public Student_Login()
         {
             InitializeComponent();
@@ -24,10 +25,23 @@ namespace CMPT391Project
             if (Int32.TryParse(login_input.Text, out student_id))
             {
                 student_id = Int32.Parse(login_input.Text);
-                this.Hide();
-                Student_Homepage StudentHomepageForm = new Student_Homepage(student_id);
-                StudentHomepageForm.ShowDialog();
-                this.Close();
+
+                if (collegeDB.executeFetchCommand("SELECT * FROM student s WHERE s.s_id = '" + student_id.ToString() + "';").Tables[0].Rows.Count > 0)
+                {
+                    this.Hide();
+                    Student_Homepage StudentHomepageForm = new Student_Homepage(student_id);
+                    StudentHomepageForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    // shame them
+                    shameText.Text = "Please Enter a Valid ID";
+                    shameText.ForeColor = Color.FromName("Red");
+                    shameText.Visible = true;
+
+                }
+                
             }
         }
 
@@ -37,6 +51,16 @@ namespace CMPT391Project
             {
                 e.Handled = true;
             }
+        }
+
+        private void shameText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Student_Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

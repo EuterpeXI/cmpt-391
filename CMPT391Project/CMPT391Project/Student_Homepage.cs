@@ -51,7 +51,7 @@ namespace CMPT391Project
         {
             String query = "SELECT first_name, last_name FROM student WHERE s_id = '" + this.student_id + "';";
             DataSet queryResult = collegeDB.executeFetchCommand(query);
-            if (queryResult.Tables.Count > 0)
+            if (queryResult.Tables[0].Rows.Count > 0)
             {
                 StudentNameLabel.Text = queryResult.Tables[0].Rows[0][0].ToString() + " " + queryResult.Tables[0].Rows[0][1].ToString();
             }

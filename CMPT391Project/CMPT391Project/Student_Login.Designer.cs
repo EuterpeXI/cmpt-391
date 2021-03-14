@@ -34,6 +34,7 @@
             this.login_button = new System.Windows.Forms.Button();
             this.studentID_label = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.shameText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,19 +92,34 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // shameText
+            // 
+            this.shameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shameText.Location = new System.Drawing.Point(496, 649);
+            this.shameText.Name = "shameText";
+            this.shameText.Size = new System.Drawing.Size(520, 43);
+            this.shameText.TabIndex = 6;
+            this.shameText.Text = "Shame Text";
+            this.shameText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shameText.Visible = false;
+            this.shameText.Click += new System.EventHandler(this.shameText_Click);
+            // 
             // Student_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.Controls.Add(this.shameText);
             this.Controls.Add(this.studentID_label);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.login_input);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Student_Login";
             this.Text = "Student Login";
+            this.Load += new System.EventHandler(this.Student_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -118,5 +134,6 @@
         private System.Windows.Forms.Label studentID_label;
         private System.Windows.Forms.TextBox login_input;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label shameText;
     }
 }

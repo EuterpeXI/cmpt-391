@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cart));
             this.label1 = new System.Windows.Forms.Label();
             this.Cart_View = new System.Windows.Forms.DataGridView();
             this.Register_Button = new System.Windows.Forms.Button();
@@ -148,6 +149,7 @@
             this.Controls.Add(this.Register_Button);
             this.Controls.Add(this.Cart_View);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cart";
             this.Text = "Cart";
             ((System.ComponentModel.ISupportInitialize)(this.Cart_View)).EndInit();
