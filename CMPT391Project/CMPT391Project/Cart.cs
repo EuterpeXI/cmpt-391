@@ -96,6 +96,7 @@ namespace CMPT391Project
 
                 }
             }
+            //TODO: call subscribed method 
         }
 
         /// <summary>

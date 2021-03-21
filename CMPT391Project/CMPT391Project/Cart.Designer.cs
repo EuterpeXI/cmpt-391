@@ -98,10 +98,10 @@
             // Register_Button
             // 
             this.Register_Button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Register_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(138)))), ((int)(((byte)(129)))));
+            this.Register_Button.BackColor = System.Drawing.Color.Blue;
             this.Register_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Register_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Register_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(214)))), ((int)(((byte)(160)))));
+            this.Register_Button.ForeColor = System.Drawing.Color.Lime;
             this.Register_Button.Location = new System.Drawing.Point(392, 800);
             this.Register_Button.Name = "Register_Button";
             this.Register_Button.Size = new System.Drawing.Size(242, 65);
@@ -126,10 +126,10 @@
             // Delete_Course_Button
             // 
             this.Delete_Course_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Delete_Course_Button.BackColor = System.Drawing.Color.Maroon;
+            this.Delete_Course_Button.BackColor = System.Drawing.Color.Blue;
             this.Delete_Course_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_Course_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_Course_Button.ForeColor = System.Drawing.Color.White;
+            this.Delete_Course_Button.ForeColor = System.Drawing.Color.Red;
             this.Delete_Course_Button.Location = new System.Drawing.Point(744, 640);
             this.Delete_Course_Button.Name = "Delete_Course_Button";
             this.Delete_Course_Button.Size = new System.Drawing.Size(245, 65);
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1001, 878);
             this.Controls.Add(this.Delete_Course_Button);
             this.Controls.Add(this.Error_Text);
