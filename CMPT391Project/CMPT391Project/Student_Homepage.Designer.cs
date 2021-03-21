@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.logout_button = new System.Windows.Forms.Button();
             this.StudentNameLabel = new System.Windows.Forms.Label();
+            this.ClassSearch = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StudentIDLabel.AutoSize = true;
+            this.StudentIDLabel.BackColor = System.Drawing.Color.Transparent;
             this.StudentIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentIDLabel.Location = new System.Drawing.Point(232, 120);
             this.StudentIDLabel.Name = "StudentIDLabel";
@@ -56,6 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(240, 56);
             this.label1.Name = "label1";
@@ -65,11 +68,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.ClassSearch);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 192);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 184);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(584, 168);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // button1
@@ -77,7 +82,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(581, 85);
+            this.button1.Size = new System.Drawing.Size(581, 47);
             this.button1.TabIndex = 0;
             this.button1.Text = "My Enrolled Classes";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,11 +91,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 94);
+            this.button2.Location = new System.Drawing.Point(3, 56);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(581, 85);
+            this.button2.Size = new System.Drawing.Size(581, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Class Search and Enroll";
+            this.button2.Text = "Enroll";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -111,6 +116,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StudentNameLabel.AutoSize = true;
+            this.StudentNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.StudentNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StudentNameLabel.Location = new System.Drawing.Point(232, 88);
             this.StudentNameLabel.Name = "StudentNameLabel";
@@ -119,10 +125,24 @@
             this.StudentNameLabel.Text = "Amelia Chin";
             this.StudentNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ClassSearch
+            // 
+            this.ClassSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClassSearch.Location = new System.Drawing.Point(3, 112);
+            this.ClassSearch.Name = "ClassSearch";
+            this.ClassSearch.Size = new System.Drawing.Size(581, 50);
+            this.ClassSearch.TabIndex = 2;
+            this.ClassSearch.Text = "Class Search";
+            this.ClassSearch.UseVisualStyleBackColor = true;
+            this.ClassSearch.Click += new System.EventHandler(this.ClassSearch_Click);
+            // 
             // Student_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.StudentNameLabel);
             this.Controls.Add(this.logout_button);
@@ -148,5 +168,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button logout_button;
         private System.Windows.Forms.Label StudentNameLabel;
+        private System.Windows.Forms.Button ClassSearch;
     }
 }
