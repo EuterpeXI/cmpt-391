@@ -98,33 +98,18 @@ namespace CMPT391Project
             this.dateTableAdapter.Fill(this.collegeWarehouseDateDataSet3.date);
 
             DataTable data = addEmpty(wareHouseDB.executeFetchCommand("SELECT DISTINCT date.year FROM date;").Tables[0], "year", true);
-            //row = data.NewRow();
-            //row["year"] = 0;
-            //data.Rows.Add(row);
             yearDD.DataSource = data;
 
             data = addEmpty(wareHouseDB.executeFetchCommand("SELECT DISTINCT TOP(50) date.semester FROM date;").Tables[0], "semester", false);
-            //row = data.NewRow();
-            //row["semester"] = "";
-            //data.Rows.Add(row);
             termDD.DataSource = data;
 
             data = addEmpty(wareHouseDB.executeFetchCommand("SELECT DISTINCT course.department FROM course;").Tables[0], "department", false);
-            //row = data.NewRow();
-            //row["department"] = "";
-            //data.Rows.Add(row);
             departmentDD.DataSource = data;
 
             data = addEmpty(wareHouseDB.executeFetchCommand("SELECT DISTINCT course.university FROM course;").Tables[0], "university", false);
-            //row = data.NewRow();
-            //row["university"] = "";
-            //data.Rows.Add(row);
             universityDD.DataSource = data;
 
             data = addEmpty(wareHouseDB.executeFetchCommand("SELECT DISTINCT course.faculty FROM course;").Tables[0], "faculty", false);
-            //row = data.NewRow();
-            //row["faculty"] = "";
-            //data.Rows.Add(row);
             facultyDD.DataSource = data;
         }
 
