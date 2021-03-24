@@ -21,6 +21,7 @@ namespace CMPT391Project
             InitializeComponent();
             StudentIDLabel.Text = student_id.ToString();
             this.student_id = student_id;
+            StudentInfoManager.Instance.setStudentID(student_id);
         }
 
         private void Logout_button_Click(object sender, EventArgs e)
@@ -59,6 +60,14 @@ namespace CMPT391Project
             {
                 StudentNameLabel.Text = "Name not found";
             }
+        }
+
+        private void ClassSearch_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Course_Search CSForm = new Course_Search();
+            CSForm.ShowDialog();
+            this.Close();
         }
     }
 }
