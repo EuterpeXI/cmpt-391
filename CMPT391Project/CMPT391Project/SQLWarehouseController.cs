@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace CMPT391Project
 {
-    class SQLController
+    class SQLWarehouseController
     {
-
         private SqlConnection sqlCon;
         private SqlCommand command;
         // set to local server for whoever is using
-        private static String conStr = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT391Project.Properties.Settings.CollegeConnectionString"].ConnectionString;
-        public SQLController()
+        private static String conStr = System.Configuration.ConfigurationManager.ConnectionStrings["CMPT391Project.Properties.Settings.CollegeWarehouseConnectionString"].ConnectionString;
+
+        public SQLWarehouseController()
         {
 
             // on initialization make and check connection then error if it does not work
@@ -96,4 +96,3 @@ namespace CMPT391Project
         }
     }
 }
-

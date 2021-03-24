@@ -132,5 +132,10 @@ namespace CMPT391Project
         {
 
         }
+
+        private void SectionBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

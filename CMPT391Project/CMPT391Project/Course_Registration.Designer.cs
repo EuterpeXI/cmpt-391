@@ -130,6 +130,7 @@
             // 
             this.sectionBindingSource.DataMember = "section";
             this.sectionBindingSource.DataSource = this.sectionYearDataSet;
+            this.sectionBindingSource.CurrentChanged += new System.EventHandler(this.SectionBindingSource_CurrentChanged);
             // 
             // sectionYearDataSet
             // 

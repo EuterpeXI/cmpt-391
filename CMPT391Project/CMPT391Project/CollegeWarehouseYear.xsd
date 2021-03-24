@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CollegeWarehouseYear" targetNamespace="http://tempuri.org/CollegeWarehouseYear.xsd" xmlns:mstns="http://tempuri.org/CollegeWarehouseYear.xsd" xmlns="http://tempuri.org/CollegeWarehouseYear.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CollegeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CollegeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CMPT391Project.Properties.Settings.GlobalReference.Default.CollegeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dateTableAdapter" GeneratorDataComponentClassName="dateTableAdapter" Name="date" UserDataComponentName="dateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CollegeConnectionString (Settings)" DbObjectName="College.dbo.date" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT year FROM dbo.date</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="year" DataSetColumn="year" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CollegeConnectionString (Settings)" DbObjectName="College.dbo.date" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SelectDistinctYears" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SelectDistinctYears" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SelectDistinctYears">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DISTINCT year FROM dbo.date</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CollegeWarehouseYear" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CollegeWarehouseYear" msprop:Generator_UserDSName="CollegeWarehouseYear">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="date" msprop:Generator_TableClassName="dateDataTable" msprop:Generator_TableVarName="tabledate" msprop:Generator_RowChangedName="dateRowChanged" msprop:Generator_TablePropName="date" msprop:Generator_RowDeletingName="dateRowDeleting" msprop:Generator_RowChangingName="dateRowChanging" msprop:Generator_RowEvHandlerName="dateRowChangeEventHandler" msprop:Generator_RowDeletedName="dateRowDeleted" msprop:Generator_RowClassName="dateRow" msprop:Generator_UserTableName="date" msprop:Generator_RowEvArgName="dateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="year" msprop:Generator_ColumnVarNameInTable="columnyear" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_UserColumnName="year" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
