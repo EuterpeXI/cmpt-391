@@ -51,13 +51,6 @@ namespace CMPT391Project
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            /*
-             * @uni NVARCHAR(50)  = NULL,
-	@sem NVARCHAR(50) = NULL,
-	@dep NVARCHAR(50)  = NULL,
-	@yr INT  = NULL,
-	@fac NVARCHAR(50)  = NULL
-             */
             String temp = selectionQuery;
             String comboBoxText = "";
             String university = universityDD.Text;
