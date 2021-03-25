@@ -23,9 +23,9 @@ namespace CMPT391Project
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Student_Homepage SHForm = new Student_Homepage(StudentInfoManager.Instance.getStudentID());
-            SHForm.ShowDialog();
+            //this.Hide();
+            //Student_Homepage SHForm = new Student_Homepage(StudentInfoManager.Instance.getStudentID());
+            //SHForm.ShowDialog();
             this.Close();
         }
 
@@ -64,7 +64,10 @@ namespace CMPT391Project
             String faculty = facultyDD.Text;
             comboBoxText += (faculty.Length != 0) ? " @fac = '" + faculty + "', " : "";
 
-            comboBoxText = comboBoxText.Remove(comboBoxText.Length - 2);
+            if (comboBoxText.Length != 0)
+            {
+                comboBoxText = comboBoxText.Remove(comboBoxText.Length - 2);
+            }
             selectionQuery += comboBoxText;
             //call SQL and get result
             DataSet queryResult = wareHouseDB.executeFetchCommand(selectionQuery);

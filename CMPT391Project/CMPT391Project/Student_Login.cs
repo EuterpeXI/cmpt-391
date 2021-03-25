@@ -62,5 +62,12 @@ namespace CMPT391Project
         {
 
         }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+
+            Course_Search CourseSearchForm = new Course_Search();
+            CourseSearchForm.ShowDialog();
+        }
     }
 }

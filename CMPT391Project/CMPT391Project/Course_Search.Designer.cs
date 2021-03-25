@@ -112,6 +112,7 @@
             // 
             this.facultyDD.DataSource = this.courseBindingSource;
             this.facultyDD.DisplayMember = "faculty";
+            this.facultyDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.facultyDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.facultyDD.FormattingEnabled = true;
             this.facultyDD.Location = new System.Drawing.Point(198, 92);
@@ -145,6 +146,7 @@
             // 
             this.termDD.DataSource = this.dateBindingSource;
             this.termDD.DisplayMember = "semester";
+            this.termDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.termDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.termDD.FormattingEnabled = true;
             this.termDD.Location = new System.Drawing.Point(198, 151);
@@ -178,6 +180,7 @@
             // 
             this.yearDD.DataSource = this.dateBindingSource;
             this.yearDD.DisplayMember = "year";
+            this.yearDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.yearDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.yearDD.FormattingEnabled = true;
             this.yearDD.Location = new System.Drawing.Point(501, 151);
@@ -203,6 +206,7 @@
             // 
             this.universityDD.DataSource = this.courseBindingSource;
             this.universityDD.DisplayMember = "university";
+            this.universityDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.universityDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.universityDD.FormattingEnabled = true;
             this.universityDD.Location = new System.Drawing.Point(501, 92);
@@ -240,6 +244,7 @@
             // 
             this.departmentDD.DataSource = this.courseBindingSource;
             this.departmentDD.DisplayMember = "department";
+            this.departmentDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.departmentDD.FormattingEnabled = true;
             this.departmentDD.Location = new System.Drawing.Point(832, 91);
