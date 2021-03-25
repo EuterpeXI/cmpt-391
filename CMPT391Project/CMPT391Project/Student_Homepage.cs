@@ -64,10 +64,10 @@ namespace CMPT391Project
 
         private void ClassSearch_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             Course_Search CSForm = new Course_Search();
             CSForm.ShowDialog();
-            this.Close();
+            //this.Close();
         }
     }
 }
