@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Xml;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,13 @@ namespace CMPT391Project
     {
         private String selectionQuery;
         private SQLWarehouseController wareHouseDB = new SQLWarehouseController();
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        //private XMLHandler handler;
         public Course_Search()
         {
             InitializeComponent();
             selectionQuery = "EXEC usp_get_sum_course_count";//initialize the query string
+            //handler = new XMLHandler();
 
         }
 
@@ -165,6 +169,23 @@ namespace CMPT391Project
         private void MaxRBtn_CheckedChanged(object sender, EventArgs e)
         {
             selectionQuery = "EXEC dbo.usp_get_max_course_count ";
+        }
+
+        //choose a file and input it
+        //TODO: load the file name into the XMLHandler
+        private void CourseDetail_Click(object sender, EventArgs e)
+        {
+             
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.RestoreDirectory = true;
+            openFileDialog1.DefaultExt = "xml";
+            openFileDialog1.CheckFileExists = true;
+            openFileDialog1.CheckPathExists = true;
+            //test xml
+            testLabel.Text = XMLHandler.loadFile(openFileDialog1.FileName);
         }
     }
 }

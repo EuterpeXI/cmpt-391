@@ -10,7 +10,6 @@ using System.Threading.Tasks;
  */
 namespace CMPT391Project
 {
-    
     class StudentInfoManager
     {
         #region Singleton

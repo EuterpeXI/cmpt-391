@@ -57,6 +57,7 @@
             this.averageRBtn = new System.Windows.Forms.RadioButton();
             this.sumRBtn = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.testLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collegeWarehouseCourseDataSet)).BeginInit();
@@ -105,8 +106,9 @@
             this.courseDetail.Name = "courseDetail";
             this.courseDetail.Size = new System.Drawing.Size(273, 45);
             this.courseDetail.TabIndex = 0;
-            this.courseDetail.Text = "View Detail";
+            this.courseDetail.Text = "Update Data";
             this.courseDetail.UseVisualStyleBackColor = false;
+            this.courseDetail.Click += new System.EventHandler(this.CourseDetail_Click);
             // 
             // facultyDD
             // 
@@ -341,6 +343,15 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "*0 means no selection";
             // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(149, 551);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(52, 13);
+            this.testLabel.TabIndex = 23;
+            this.testLabel.Text = "Test data";
+            // 
             // Course_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +359,7 @@
             this.BackColor = System.Drawing.Color.Khaki;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1817, 919);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sumRBtn);
             this.Controls.Add(this.averageRBtn);
@@ -410,5 +422,6 @@
         private System.Windows.Forms.RadioButton averageRBtn;
         private System.Windows.Forms.RadioButton sumRBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label testLabel;
     }
 }
