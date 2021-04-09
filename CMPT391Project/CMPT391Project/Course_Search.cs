@@ -185,7 +185,7 @@ namespace CMPT391Project
             openFileDialog1.CheckFileExists = true;
             openFileDialog1.CheckPathExists = true;
             //test xml
-            testLabel.Text = XMLHandler.loadFile(openFileDialog1.FileName);
+            testLabel.Text = XMLHandler.loadFile(wareHouseDB ,openFileDialog1.FileName);
         }
     }
 }
